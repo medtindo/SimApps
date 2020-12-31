@@ -157,7 +157,11 @@ class _LoginPageState extends State<LoginPage> {
           shrinkWrap: true,
           padding: EdgeInsets.only(left: 24.0, right: 24.0),
           children: <Widget>[
-            ButtonBar(),
+            ButtonBar(
+              children: [Text("data")],
+              alignment: MainAxisAlignment.center,
+            ),
+            SizedBox(height: 48.0),
             logo,
             judul,
             SizedBox(height: 48.0),
