@@ -11,7 +11,8 @@ class DataPasien {
     message = json['message'];
     nilai = json['nilai'];
     if (json['list'] != null) {
-      list = new List<Data>();
+      // ignore: deprecated_member_use
+      list = <Data>[];
       json['list'].forEach((v) {
         list.add(new Data.fromJson(v));
       });

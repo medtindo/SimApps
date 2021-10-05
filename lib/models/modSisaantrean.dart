@@ -9,7 +9,7 @@ class SisaAntrean {
     success = json['success'];
     message = json['message'];
     if (json['list'] != null) {
-      list = new List<Data>();
+      list = <Data>[];
       json['list'].forEach((v) {
         list.add(new Data.fromJson(v));
       });

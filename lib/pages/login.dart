@@ -3,6 +3,8 @@ import 'package:simrs/class/apipasien.dart';
 import 'package:simrs/class/session.dart';
 import 'package:simrs/models/modPasien.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:simrs/pages/halaman.dart';
+import 'package:simrs/pages/pendaftaran.dart';
 //import 'package:simrs/pages/halaman.dart';
 import 'package:simrs/pages/splash.dart';
 //import 'package:intl/intl.dart';
@@ -116,13 +118,13 @@ class _LoginPageState extends State<LoginPage> {
               if (result.success == true) {
                 print(result.message);
 
-                print(result.list.first.aGAMA);
+                //print(result.list.first.aGAMA);
 
                 await Session.setNilai('norm', norm.trim());
                 await Session.setNilai('tgllahir', tgllahir.trim());
 
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Splash()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Halaman()));
               } else {
                 print("gagal masuk");
                 //panggilSnackbar("Gagal Masuk", context);
@@ -142,7 +144,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
 
-    final forgotLabel = FlatButton(
+    final forgotLabel = TextButton(
       child: Text(
         'Cara Cek Nomor Rekam Medis Anda',
         style: TextStyle(color: Colors.black38),
